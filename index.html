@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+    <title>Quijano</title>
+    <style>
+        li {
+            font-family: 'Questrial', sans-serif;
+            font-size: 24px;
+        }
+
+        a {
+            color: black
+        }
+
+        a:hover {
+            color: white;
+        }
+
+        .links {
+            margin-top: 5%
+        }
+
+        body {
+            background-color: #6E8A94;
+        }
+
+        #desktop {
+            display: block;
+            margin-top: 10%;
+        }
+
+        #mobile {
+            display: none;
+        }
+
+        .content {
+            position: fixed;
+            width: 100%;
+            margin-top: 40%;
+        }
+
+        .play {
+            margin-top: 20%;
+        }
+        .space {
+            margin-bottom: 6%
+        }
+        
+        .small {
+            font-size: 16px;
+            margin-top: 6%;
+        }
+        .weekly {
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .weekly:hover {
+            color: white;
+        }
+
+        .reg {
+            margin-bottom: 2%;
+        }
+
+        .big{
+            margin-bottom: 8%;
+        }
+
+        img {
+            cursor: pointer;
+        }
+
+        .toggled-links {
+            font-size: 18px;
+        }
+
+        @media screen and (max-width: 1024px) {
+            #desktop {
+                margin-top: 35%;
+            }
+        }
+
+
+        @media screen and (max-width: 500px) {
+
+            #desktop {
+                display: none;
+            }
+            #mobile {
+                display: block;
+            }
+
+            #background-video {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            body {
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                overflow: hidden;
+                z-index: -100;
+            }
+
+            li {
+                font-family: 'Questrial', sans-serif;
+                font-size: 20px;
+                color: #6E8A94;
+            }
+
+            a {
+                color: #6E8A94;
+            }
+
+            li:hover {
+                color: white;
+            }
+
+        }
+
+        @media (min-aspect-ratio: 16/9) {
+            #background-video {
+                height: 300%;
+                top: -100%;
+            }
+        }
+
+        @media (max-aspect-ratio: 16/9) {
+            #background-video {
+                width: 300%;
+                left: -100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="desktop">
+        <div class="container">
+            <div class="row">
+                <div class="links col m4">
+                    <ul class="center">
+                        <li class="reg"><a href="http://www.soundcloud.com/quijano">SOUNDCLOUD</a></li>
+                        <li class="reg"><a href="http://www.instagram.com/dj.quijano">INSTAGRAM</a></li>
+                        <li class="space"><a href="http://www.twitter.com/djquijano">TWITTER</a></li>
+                        <li class="weekly">BIWEEKLY PLAYLIST</li>
+                        <div class="toggled">
+                                <li class="toggled-links"><a href="https://itunes.apple.com/us/playlist/biweekly/pl.u-aZb0135uPV7XZ9">APPLE MUSIC</a></li>
+                                <li class="toggled-links"><a href="https://open.spotify.com/user/1254276734/playlist/3lyUqJ9ezy21siyE94iatu?si=uam6hWIlTN2RDoWAGRfxww">SPOTIFY</a></li>    
+                        </div>
+                        <li class="small"><a href="mailto:val.moveset@gmail.com">CONTACT</a></li>
+                    </ul>
+                </div>
+                <div class="col m4">
+                    <video id="webVideo" width="100%" autoplay="true" loop="true" playsinline="" muted>
+                        <source src="./assets/IMG_0698.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="play col m4 center-align">
+                    <img id="playOptions" src="./assets/play.png" height="50px" width="50px" onclick="swap()">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="mobile">
+        <video id="background-video" autoplay="true" loop="true" playsinline="" muted>
+            <source src="./assets/IMG_0698.mp4" type="video/mp4">
+        </video>
+        <ul class="content center">
+            <li class="reg"><a href="http://www.soundcloud.com/quijano">SOUNDCLOUD</a></li>
+            <li class="reg"><a href="http://www.instagram.com/dj.quijano">INSTAGRAM</a></li>
+            <li class="space"><a href="http://www.twitter.com/djquijano">TWITTER</a></li>
+            <li class="weekly">BIWEEKLY PLAYLIST</li>
+            <div class="toggled">
+                <li class="toggled-links"><a href="https://itunes.apple.com/us/playlist/biweekly/pl.u-aZb0135uPV7XZ9">APPLE MUSIC</a></li>
+                <li class="toggled-links"><a href="https://open.spotify.com/user/1254276734/playlist/3lyUqJ9ezy21siyE94iatu?si=uam6hWIlTN2RDoWAGRfxww">SPOTIFY</a></li>    
+            </div>
+            <li class="small big"><a href="mailto:val.moveset@gmail.com">CONTACT</a></li>
+            <li><img id="playOptionsMobile" src="./assets/play.png"  height="50px" width="50px" onclick="swapMobile()"></li>
+        </ul>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.toggled').hide();
+    })
+    $('.weekly').click(function() {
+        $('.toggled').slideToggle("slow");
+    });
+
+    let song = new Audio("assets/song.wav")
+    let swap = () => {
+        if (document.getElementById("playOptions").src.endsWith('play.png')) {
+            document.getElementById('playOptions').src = "./assets/stop.png"
+            document.getElementById('playOptionsMobile').src = document.getElementById('playOptions').src
+            song.play();
+
+        }
+        else if (document.getElementById("playOptions").src.endsWith('stop.png')) {
+            document.getElementById('playOptions').src = "./assets/play.png"
+            document.getElementById('playOptionsMobile').src = document.getElementById('playOptions').src
+            song.pause();
+            song.currentTime = 0;
+        }
+    }
+
+    let swapMobile = () => {
+        if (document.getElementById("playOptionsMobile").src.endsWith('play.png')) {
+            document.getElementById('playOptionsMobile').src = "./assets/stop.png"
+            document.getElementById('playOptions').src = document.getElementById('playOptionsMobile').src
+            song.play();
+
+        }
+        else if (document.getElementById("playOptionsMobile").src.endsWith('stop.png')) {
+            document.getElementById('playOptionsMobile').src = "./assets/play.png"
+            document.getElementById('playOptions').src = document.getElementById('playOptionsMobile').src
+            song.pause();
+            song.currentTime = 0;
+        }
+    }
+
+    let videoMobile = document.getElementById("background-video")
+    let videoWeb = document.getElementById("webVideo")
+
+    $( window ).resize(function(){
+        if (window.innerWidth <= 500) {
+            videoMobile.currentTime = 0;
+            videoMobile.play();
+        }
+        else if (window.innerWidth >= 768) {
+            videoWeb.currentTime = 0;
+        }
+    })
+
+</script>
+</html>
