@@ -252,12 +252,21 @@
         if (window.innerWidth <= 500) {
             videoMobile.currentTime = 0;
             videoMobile.play();
-            videoMobile.width = window.innerWidth;
         }
         else if (window.innerWidth >= 768) {
             videoWeb.currentTime = 0;
         }
     })
+
+    let changeVideoSize = () => {
+        let width = window.innerWidth;
+        if (width <= 500) {
+            videoMobile.width = width
+            console.log(videoMobile);
+        }
+    }
+
+    changeVideoSize();
 
 </script>
 </html>
