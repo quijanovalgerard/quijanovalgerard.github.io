@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
     <title>Quijano</title>
     <style>
@@ -108,21 +108,21 @@
                 z-index: -100; */
 
                 position: absolute;
-     top: 0px;
-     left: 0px;
-     min-width: 100%;
-     min-height: 100%;
-     width: auto;
-     height: auto;
-     z-index: -1000;
-     overflow: hidden;
+                top: 0px;
+                left: 0px;
+                min-width: 100%;
+                min-height: 100%;
+                width: auto;
+                height: auto;
+                z-index: -1000;
+                overflow: hidden;
             }
 
             #background-video {
                 position: absolute;
                 top: 0;
                 left: 0;
-                width: 100%;
+                /* width: 100%; */
                 height: 100%;
             }
 
@@ -252,6 +252,7 @@
         if (window.innerWidth <= 500) {
             videoMobile.currentTime = 0;
             videoMobile.play();
+            videoMobile.width = window.innerWidth;
         }
         else if (window.innerWidth >= 768) {
             videoWeb.currentTime = 0;
