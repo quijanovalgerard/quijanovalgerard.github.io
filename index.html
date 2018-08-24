@@ -96,27 +96,32 @@
 
         @media(max-width: 500px) {
 
+            html, body {
+                height: 100%;
+                margin: auto;
+            }
+
             #desktop {
                 display: none;
             }
 
             #mobile {
                 display: block;
-                position: fixed;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
+                height: 100%;
+                width: 100%;
                 overflow: hidden;
-                z-index: -100;
+                position: relative;
             }
 
-            #background-video {
+            .video{
                 position: fixed;
-                right: 0;
-                bottom: 0;
-                min-width: 100%; 
+                top: 50%; left: 50%;
+                z-index: -1;
+                min-width: 100%;
                 min-height: 100%;
+                width: auto;
+                height: auto;
+                transform: translate(-50%, -50%)
             }
 
             li {
@@ -135,7 +140,7 @@
 
         }
 
-        @media (min-aspect-ratio: 16/9) {
+        /* @media (min-aspect-ratio: 16/9) {
             #background-video {
                 height: 300%;
                 top: -100%;
@@ -147,7 +152,7 @@
                 width: 300%;
                 left: -100%;
             }
-        }
+        } */
     </style>
 </head>
 
@@ -181,7 +186,7 @@
     </div>
     
     <div id="mobile">
-        <video id="background-video" autoplay="true" loop="true" playsinline="" muted>
+        <video class="video" autoplay="true" loop="true" playsinline="" muted>
             <source src="./assets/IMG_0698.mp4" type="video/mp4">
         </video>
         <ul class="content center">
@@ -197,6 +202,7 @@
             <li><img id="playOptionsMobile" src="./assets/play.png"  height="50px" width="50px" onclick="swapMobile()"></li>
         </ul>
     </div>
+
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script>
@@ -251,16 +257,16 @@
         }
     })
 
-    let changeVideoSize = () => {
-        let width = window.innerWidth;
-        if (width <= 500) {
-            videoMobile.width = width;
-            videoMobile.height = window.innerHeight;
-            console.log(videoMobile);
-        }
-    }
+    // let changeVideoSize = () => {
+    //     let width = window.innerWidth;
+    //     if (width <= 500) {
+    //         videoMobile.width = "auto";
+    //         videoMobile.height = "auto";
+    //         console.log(videoMobile);
+    //     }
+    // }
 
-    changeVideoSize();
+    // changeVideoSize();
 
 </script>
 </html>
