@@ -80,21 +80,21 @@
             font-size: 18px;
         }
 
-        @media screen and (min-width: 768px) {
+        @media(min-width: 768px) {
             body {
             background-color: #6E8A94;
         }
         }
 
 
-        @media screen and (max-width: 1024px) {
+        @media(max-width: 1024px) {
             #desktop {
                 margin-top: 35%;
             }
         }
 
 
-        @media screen and (max-width: 500px) {
+        @media(max-width: 500px) {
 
             #desktop {
                 display: none;
@@ -102,13 +102,13 @@
 
             #mobile {
                 display: block;
-                /* position: fixed;
+                position: fixed;
                 top: 0;
                 right: 0;
                 bottom: 0;
                 left: 0;
                 overflow: hidden;
-                z-index: -100; */
+                z-index: -100;
             }
 
             #background-video {
@@ -135,7 +135,7 @@
 
         }
 
-        /* @media (min-aspect-ratio: 16/9) {
+        @media (min-aspect-ratio: 16/9) {
             #background-video {
                 height: 300%;
                 top: -100%;
@@ -147,7 +147,7 @@
                 width: 300%;
                 left: -100%;
             }
-        } */
+        }
     </style>
 </head>
 
@@ -198,7 +198,7 @@
         </ul>
     </div>
 </body>
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script>
     $(document).ready(function(){
         $('.toggled').hide();
