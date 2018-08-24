@@ -109,23 +109,14 @@
                 left: 0;
                 overflow: hidden;
                 z-index: -100; */
-
-                position: absolute;
-                top: 0px;
-                left: 0px;
-                min-width: 100%;
-                min-height: 100%;
-                width: auto;
-                height: auto;
-                z-index: -1000;
-                overflow: hidden;
             }
 
             #background-video {
-                position: absolute;
-                top: 0;
-                left: 0;
-                -webkit-border-radius: 0px;
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                min-width: 100%; 
+                min-height: 100%;
             }
 
             li {
@@ -144,7 +135,7 @@
 
         }
 
-        @media (min-aspect-ratio: 16/9) {
+        /* @media (min-aspect-ratio: 16/9) {
             #background-video {
                 height: 300%;
                 top: -100%;
@@ -156,7 +147,7 @@
                 width: 300%;
                 left: -100%;
             }
-        }
+        } */
     </style>
 </head>
 
