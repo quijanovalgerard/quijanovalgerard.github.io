@@ -165,6 +165,10 @@
                         <li class="reg"><a href="http://www.soundcloud.com/quijano">SOUNDCLOUD</a></li>
                         <li class="reg"><a href="http://www.instagram.com/dj.quijano">INSTAGRAM</a></li>
                         <li class="space"><a href="http://www.twitter.com/djquijano">TWITTER</a></li>
+                        <li class="weekly weekly-upcoming">UPCOMING SHOWS</li>
+                        <div class="toggled-upcoming">
+                                <li class="toggled-links"><a href="https://www.eventbrite.com/e/sango-sam-gellaitry-at-1015-folsom-tickets-48584090322?aff=ebdssbdestsearch">SANGO & SAM GELLAITRY @ 1015 SF | 9/2</a></li>   
+                        </div>
                         <li class="weekly">BIWEEKLY PLAYLIST</li>
                         <div class="toggled">
                                 <li class="toggled-links"><a href="https://itunes.apple.com/us/playlist/biweekly/pl.u-aZb0135uPV7XZ9">APPLE MUSIC</a></li>
@@ -193,6 +197,10 @@
             <li class="reg"><a href="http://www.soundcloud.com/quijano">SOUNDCLOUD</a></li>
             <li class="reg"><a href="http://www.instagram.com/dj.quijano">INSTAGRAM</a></li>
             <li class="space"><a href="http://www.twitter.com/djquijano">TWITTER</a></li>
+            <li class="weekly weekly-upcoming">UPCOMING SHOWS</li>
+                <div class="toggled-upcoming">
+                    <li class="toggled-links"><a href="https://www.eventbrite.com/e/sango-sam-gellaitry-at-1015-folsom-tickets-48584090322?aff=ebdssbdestsearch">SANGO & SAM GELLAITRY @ 1015 SF | 9/2</a></li>   
+                </div>
             <li class="weekly">BIWEEKLY PLAYLIST</li>
             <div class="toggled">
                 <li class="toggled-links"><a href="https://itunes.apple.com/us/playlist/biweekly/pl.u-aZb0135uPV7XZ9">APPLE MUSIC</a></li>
@@ -208,9 +216,13 @@
 <script>
     $(document).ready(function(){
         $('.toggled').hide();
+        $('.toggled-upcoming').hide();
     })
     $('.weekly').click(function() {
         $('.toggled').slideToggle("slow");
+    });
+    $('.weekly-upcoming').click(function() {
+        $('.toggled-upcoming').slideToggle("slow");
     });
 
     let song = new Audio("assets/song.wav")
