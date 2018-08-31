@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta property="og:image" content="./assets/quijano4.png">
+    <meta property="og:image" content="./assets/quijano.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
     <title>Quijano</title>
@@ -22,11 +22,7 @@
             color: black
         }
 
-        li:hover {
-            color: white;
-        }
-        
-        a:hover {
+        li:hover, a:hover {
             color: white;
         }
 
@@ -52,6 +48,7 @@
         .play {
             margin-top: 20%;
         }
+
         .space {
             margin-bottom: 6%
         }
@@ -87,8 +84,8 @@
 
         @media(min-width: 768px) {
             body {
-            background-color: #6E8A94;
-        }
+                background-color: #6E8A94;
+            }
         }
 
 
@@ -123,41 +120,20 @@
                 top: 0; left: 0;
                 z-index: -1;
                 min-width: 100%;
-                /* width: 60vh; */
                 height: 100vh;
                 object-fit: fill;
-                /* transform: translate(-50%, -50%) */
             }
 
             li {
                 font-family: 'Questrial', sans-serif;
                 font-size: 20px;
+                color: black;
+            }
+
+            li:hover, a:hover {
                 color: #6E8A94;
             }
-
-            a {
-                color: #6E8A94;
-            }
-
-            li:hover {
-                color: white;
-            }
-
         }
-
-        /* @media (min-aspect-ratio: 16/9) {
-            #background-video {
-                height: 300%;
-                top: -100%;
-            }
-        }
-
-        @media (max-aspect-ratio: 16/9) {
-            #background-video {
-                width: 300%;
-                left: -100%;
-            }
-        } */
     </style>
 </head>
 
@@ -196,7 +172,7 @@
     
     <div id="mobile">
         <video class="video" id="mobileVideo" autoplay="true" loop="true" playsinline="true" muted>
-            <source src="./assets/IMG_0698.mp4" type="video/mp4">
+            <source src="./assets/bgvideo.mp4" type="video/mp4">
         </video>
         <ul class="content center">
             <li class="reg"><a href="http://www.soundcloud.com/quijano">SOUNDCLOUD</a></li>
@@ -226,26 +202,26 @@
     $('.weekly').click(function() {
         $(this).toggleClass("active");
         if (document.getElementById('mobile-weekly').style.color === "") {
-            document.getElementById('mobile-weekly').style.color = "white";
+            document.getElementById('mobile-weekly').style.color = "rgb(110, 138, 148)";
         }
-        else if (document.getElementById('mobile-weekly').style.color != 'white') {
-            document.getElementById('mobile-weekly').style.color = "white";
+        else if (document.getElementById('mobile-weekly').style.color != 'rgb(110, 138, 148)') {
+            document.getElementById('mobile-weekly').style.color = "rgb(110, 138, 148)";
         }
-        else if(document.getElementById('mobile-weekly').style.color === "white") {
-            document.getElementById('mobile-weekly').style.color = 'rgb(110,138,148)';
+        else if(document.getElementById('mobile-weekly').style.color === "rgb(110, 138, 148)") {
+            document.getElementById('mobile-weekly').style.color = 'black';
         }
         $('.toggled').slideToggle("slow");
     });
     $('.weekly-upcoming').click(function() {
         $(this).toggleClass("active");
         if (document.getElementById('mobile-upcoming').style.color === "") {
-            document.getElementById('mobile-upcoming').style.color = "white";
+            document.getElementById('mobile-upcoming').style.color = "rgb(110, 138, 148)";
         }
-        else if (document.getElementById('mobile-upcoming').style.color != 'white') {
-            document.getElementById('mobile-upcoming').style.color = "white";
+        else if (document.getElementById('mobile-upcoming').style.color != 'rgb(110, 138, 148)') {
+            document.getElementById('mobile-upcoming').style.color = "rgb(110, 138, 148)";
         }
-        else if(document.getElementById('mobile-upcoming').style.color === "white") {
-            document.getElementById('mobile-upcoming').style.color = 'rgb(110,138,148)';
+        else if(document.getElementById('mobile-upcoming').style.color === "rgb(110, 138, 148)") {
+            document.getElementById('mobile-upcoming').style.color = 'black';
         }
         $('.toggled-upcoming').slideToggle("slow");
     });
