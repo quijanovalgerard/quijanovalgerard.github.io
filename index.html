@@ -57,7 +57,7 @@
             font-size: 16px;
             margin-top: 6%;
         }
-        .weekly, .weekly-upcoming {
+        .weekly, .weekly-upcoming, .podcasts {
             font-size: 20px;
             cursor: pointer;
         }
@@ -152,12 +152,16 @@
                         <li class="space"><a href="http://www.twitter.com/djquijano">TWITTER</a></li>
                         <li class="weekly-upcoming" id="upcoming">UPCOMING SHOWS</li>
                         <div class="toggled-upcoming">
-                                <li class="toggled-links"><a href="https://www.eventbrite.com/e/sango-poolside-day-party-the-phoenix-hotel-tickets-60169886751">SANGO @ PHOENIX HOTEL | 6/16</a></li>   
+                            <li class="toggled-links"><a href="https://www.eventbrite.com/e/sango-poolside-day-party-the-phoenix-hotel-tickets-60169886751">SANGO @ PHOENIX HOTEL | 6/16</a></li>   
                         </div>
                         <li class="weekly" id="week">BIWEEKLY PLAYLIST</li>
                         <div class="toggled">
-                                <li class="toggled-links"><a href="https://itunes.apple.com/us/playlist/biweekly/pl.u-aZb0135uPV7XZ9">APPLE MUSIC</a></li>
-                                <li class="toggled-links"><a href="https://open.spotify.com/user/1254276734/playlist/3lyUqJ9ezy21siyE94iatu?si=uam6hWIlTN2RDoWAGRfxww">SPOTIFY</a></li>    
+                            <li class="toggled-links"><a href="https://itunes.apple.com/us/playlist/biweekly/pl.u-aZb0135uPV7XZ9">APPLE MUSIC</a></li>
+                            <li class="toggled-links"><a href="https://open.spotify.com/user/1254276734/playlist/3lyUqJ9ezy21siyE94iatu?si=uam6hWIlTN2RDoWAGRfxww">SPOTIFY</a></li>    
+                        </div>
+                        <li class="podcasts" id="all-podcasts">PODCASTS</li>
+                        <div class="toggled-podcasts">
+                            <li class="toggled-links"><a href="https://podcasts.apple.com/us/podcast/in-rotation/id1454558861?i=1000441330024">IN ROTATION</a></li>
                         </div>
                         <li class="small"><a href="mailto:val.moveset@gmail.com">CONTACT</a></li>
                     </ul>
@@ -192,6 +196,10 @@
                 <li class="toggled-links"><a href="https://itunes.apple.com/us/playlist/biweekly/pl.u-aZb0135uPV7XZ9">APPLE MUSIC</a></li>
                 <li class="toggled-links"><a href="https://open.spotify.com/user/1254276734/playlist/3lyUqJ9ezy21siyE94iatu?si=uam6hWIlTN2RDoWAGRfxww">SPOTIFY</a></li>    
             </div>
+            <li class="podcasts" id="mobile-podcasts">PODCASTS</li>
+            <div class="toggled-podcasts">
+                <li class="toggled-links"><a href="https://podcasts.apple.com/us/podcast/in-rotation/id1454558861?i=1000441330024">IN ROTATION</a></li>
+            </div>
             <li class="small big"><a href="mailto:val.moveset@gmail.com">CONTACT</a></li>
             <li><img id="playOptionsMobile" src="./assets/play.png"  height="50px" width="50px" onclick="swapMobile()"></li>
         </ul>
@@ -203,6 +211,7 @@
     $(document).ready(function(){
         $('.toggled').hide();
         $('.toggled-upcoming').hide();
+        $('.toggled-podcasts').hide();
     })
     $('.weekly').click(function() {
         $(this).toggleClass("active");
@@ -229,6 +238,19 @@
             document.getElementById('mobile-upcoming').style.color = 'black';
         }
         $('.toggled-upcoming').slideToggle("slow");
+    });
+    $('.podcasts').click(function() {
+        $(this).toggleClass("active");
+        if (document.getElementById('mobile-podcasts').style.color === "") {
+            document.getElementById('mobile-podcasts').style.color = "rgb(110, 138, 148)";
+        }
+        else if (document.getElementById('mobile-podcasts').style.color != 'rgb(110, 138, 148)') {
+            document.getElementById('mobile-podcasts').style.color = "rgb(110, 138, 148)";
+        }
+        else if(document.getElementById('mobile-podcasts').style.color === "rgb(110, 138, 148)") {
+            document.getElementById('mobile-podcasts').style.color = 'black';
+        }
+        $('.toggled-podcasts').slideToggle("slow");
     });
     let song = new Audio("assets/song.wav")
     let swap = () => {
